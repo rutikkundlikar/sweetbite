@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Admin Panel</h2>
+
+<h3>Add New Cake</h3>
+
+<form method="POST" style="max-width:300px;">
+    <label>Cake Name:</label>
+    <input name="name" required
+           style="width:100%; padding:10px; margin:10px 0; border-radius:5px; border:1px solid #ccc;">
+
+    <label>Price:</label>
+    <input type="number" name="price" required
+           style="width:100%; padding:10px; margin:10px 0; border-radius:5px; border:1px solid #ccc;">
+
+    <label>Image URL:</label>
+    <input name="image" required
+           style="width:100%; padding:10px; margin:10px 0; border-radius:5px; border:1px solid #ccc;">
+
+    <button type="submit"
+            style="width:100%; padding:10px; background:#ff5c8a; color:white; border:none; border-radius:8px;">
+        Add Cake
+    </button>
+</form>
+
+<h3 style="margin-top:40px;">Existing Cakes</h3>
+
+<div style="display:flex; gap:20px; flex-wrap:wrap;">
+    {% for p in products %}
+    <div style="background:white; padding:15px; border-radius:10px; width:200px;">
+        <img src="{{ p.image }}" style="width:100%; border-radius:10px;">
+        <h4>{{ p.name }}</h4>
+        <p>₹{{ p.price }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SweetBite Bakery</title>
+
+    <!-- Simple CSS -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial;
+            background: #fff7f8;
+        }
+
+        .navbar {
+            background: #ff5c8a;
+            padding: 15px;
+            color: white;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            padding: 15px;
+            background: #222;
+            color: white;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <a href="/">SweetBite</a>
+        <a href="/cart">Cart</a>
+        <a href="/login">Login</a>
+        <a href="/admin">Admin</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <div class="footer">
+        © 2025 SweetBite Bakery
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Your Cart</h2>
+
+{% if items|length == 0 %}
+    <p>Your cart is empty!</p>
+{% else %}
+
+<div style="display:flex; flex-direction:column; gap:20px;">
+    {% for item in items %}
+    <div style="background:white; padding:15px; border-radius:10px;">
+        <p>Product ID: {{ item.product_id }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+<a href="/checkout">
+    <button style="margin-top:20px; padding:10px; background:#ff5c8a; color:white; border:none; border-radius:8px;">
+        Proceed to Checkout
+    </button>
+</a>
+
+{% endif %}
+
+{% endblock %}

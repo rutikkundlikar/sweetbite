@@ -78,4 +78,7 @@ def admin():
     return render_template("admin_dashboard.html", products=products)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    with app.app_context():
+        db.create_all()   # Create tables if they don't exist
+    app.run(host="0.0.0.0", port=5000)
+
